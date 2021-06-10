@@ -1,22 +1,17 @@
 package com.example.coinstats;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.solver.state.State;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.example.coinstats.Adapter.CoinAdapter;
-import com.example.coinstats.Interface.onLoad;
 import com.example.coinstats.Model.CoinStructure;
 import com.example.coinstats.Model.ResRequest;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -77,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
                 .enqueue(new Callback() {
                     @Override
                     public void onFailure(@NotNull Call call, @NotNull IOException e) {
-                        Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Snackbar errorSnackbar = Snackbar.make(findViewById(R.id.coin_List_main), "API connection error, please check your internet connection or access to external networks.", 10000);
+                        errorSnackbar.show();
                     }
 
                     @Override
@@ -111,7 +107,8 @@ public class MainActivity extends AppCompatActivity {
                 .enqueue(new Callback() {
                     @Override
                     public void onFailure(@NotNull Call call, @NotNull IOException e) {
-                        Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Snackbar errorSnackbar = Snackbar.make(findViewById(R.id.coin_List_main), "API connection error, please check your internet connection or access to external networks of the application", 10000);
+                        errorSnackbar.show();
                     }
 
                     @Override
