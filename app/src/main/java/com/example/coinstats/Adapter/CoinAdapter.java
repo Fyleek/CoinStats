@@ -68,6 +68,10 @@ public class CoinAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         CoinView holderItem = (CoinView)holder;
         holderItem.coin_name.setText(item.getName());
         holderItem.coin_symbol.setText(item.getSymbol());
+
+        holderItem.price_btc.setText(item.getPriceBtc());
+        holderItem.price_btc.setTextColor(Color.parseColor("#E3C011"));
+
         holderItem.coin_price.setText(item.getprice());
         holderItem.price_1_hour.setText(item.getPriceChange1h()+"%");
         holderItem.price_24_hour.setText(item.getPriceChange1d()+"%");

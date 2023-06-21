@@ -10,7 +10,7 @@ import com.example.coinstats.R;
 
 public class CoinView extends RecyclerView.ViewHolder {
     public ImageView coin_icon;
-    public TextView coin_symbol,coin_name,coin_price,price_1_hour,price_24_hour,price_1_week;
+    public TextView coin_symbol,coin_name,coin_price,price_1_hour,price_24_hour,price_1_week,price_btc;
 
     public CoinView(View itemView){
         super(itemView);
@@ -18,6 +18,7 @@ public class CoinView extends RecyclerView.ViewHolder {
         coin_symbol = (TextView) itemView.findViewById(R.id.coin_symbol);
         coin_name = (TextView) itemView.findViewById(R.id.coin_name);
         coin_price = (TextView) itemView.findViewById(R.id.coin_priceText);
+        price_btc = (TextView) itemView.findViewById(R.id.coin_priceBtc);
 
         price_1_hour = (TextView) itemView.findViewById(R.id.coin_percent_1h);
         price_24_hour = (TextView) itemView.findViewById(R.id.coin_percent_24h);

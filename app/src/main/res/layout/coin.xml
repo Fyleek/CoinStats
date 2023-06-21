@@ -58,17 +58,6 @@
             app:layout_constraintTop_toTopOf="@id/coin_icon" />
         <!--#endregion-->
 
-        <TextView
-            android:id="@+id/coin_symbol"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:text="BTC"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/coin_icon"
-            app:layout_constraintTop_toTopOf="@id/coin_value_1h" />
-
         <!-- Money type -->
         <!--#region-->
         <TextView
@@ -91,6 +80,31 @@
             android:text="€"
             app:layout_constraintStart_toEndOf="@id/coin_priceText"
             app:layout_constraintTop_toTopOf="@id/coin_icon" />
+        <!--#endregion-->
+
+        <!--Middle informations-->
+        <!--#region-->
+        <TextView
+            android:id="@+id/coin_priceBtc_Text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text="BTC Price"
+            app:layout_constraintStart_toStartOf="@id/coin_symbol"
+            app:layout_constraintTop_toBottomOf="@id/coin_symbol"/>
+
+        <TextView
+            android:id="@+id/coin_priceBtc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/design_default_color_on_primary"
+            app:layout_constraintStart_toEndOf="@id/coin_priceBtc_Text"
+            app:layout_constraintTop_toBottomOf="@id/coin_symbol"/>
         <!--#endregion-->
 
         <!--1 Hour-->
